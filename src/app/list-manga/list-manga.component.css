@@ -1,0 +1,13 @@
+button {
+    margin-right: 10px;
+  }
+
+form {
+    margin-bottom: 20px;
+  }
+  
+input[type="text"] {
+    margin-right: 10px;
+    margin-top: 25px;
+  }
+

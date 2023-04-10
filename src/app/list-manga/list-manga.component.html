@@ -1,0 +1,37 @@
+<div class="container">
+  <div *ngIf="(auth.isAuthenticated$ | async)">
+    <form [formGroup]="searchForm" class="mb-3">
+      <div class="input-group">
+        <input type="text" formControlName="search" class="form-control" placeholder="Search manga...">
+      </div>
+    </form>
+  
+    <div class="row">
+      <table class="table">
+        <thead>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year Written</th>
+          <th>Number Of Volumes</th>
+          <th>Edit/Delete</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let manga of filteredMangas">
+            <td>{{manga.title}}</td>
+            <td>{{manga.author}}</td>
+            <td>{{manga.year_written}}</td>
+            <td>{{manga.NumberOfVolumes}}</td>
+            <td>
+              <button (click)="delManga(manga)" class="btn btn-danger" *ngIf="manga.canDelete">Delete</button>
+              <button class="btn btn-danger" *ngIf="!manga.canDelete" disabled>User is not authorized to delete or update manga</button>
+              <a href="edit-manga/{{manga._id}}" class="btn btn-success" *ngIf="manga.canEdit">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="!(auth.isAuthenticated$ | async)" class="alert alert-warning">
+    To access the manga list, you need to log in. Please log in to view the manga list.
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>Edit Manga</h2>
+    </div>
+    
+    <div class="row">
+        <form [formGroup] ="addManga" novalidate class="form">
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">Title</div>
+                <div class="col-md-4"><input type="text" formControlName="title" class="form-control"></div>
+        </div>
+        <div class="col-md-2"></div>
+        </form>
+    </div>
+    
+    <div class="row">
+        <form [formGroup] ="addManga" novalidate class="form">
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">Author</div>
+                <div class="col-md-4"><input type="text" formControlName="author" class="form-control"></div>
+        </div>
+        <div class="col-md-2"></div>
+        </form>
+    </div>
+    
+    <div class="row">
+        <form [formGroup] ="addManga" novalidate class="form">
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">Year Written</div>
+                <div class="col-md-4"><input type="number" formControlName="year_written" class="form-control"></div>
+        </div>
+        <div class="col-md-2"></div>
+        </form>
+    </div>
+    
+    <div class="row">
+        <form [formGroup] ="addManga" novalidate class="form">
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">Number Of Volumes</div>
+                <div class="col-md-4"><input type="number" formControlName="NumberOfVolumes" class="form-control"></div>
+        </div>
+        <div class="col-md-2"></div>
+        </form>
+    </div>
+    
+    <div class="row">
+        <form [formGroup] ="addManga" novalidate class="form">
+        <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button type="submit" (click)="onSubmit()" class="btn btn-success">Update Manga</button>
+                </div>
+                
+        </div>
+        <div class="col-md-2"></div>
+        </form>
+    </div>
+    </div>
